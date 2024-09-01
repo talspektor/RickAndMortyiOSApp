@@ -28,7 +28,12 @@ final class RMCharacterViewController: UIViewController {
         
         RMService.shared.execute(request,
                                  expecting: String.self) { result in
-
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
+                print(String(describing: error))
+            }
         }
     }
 

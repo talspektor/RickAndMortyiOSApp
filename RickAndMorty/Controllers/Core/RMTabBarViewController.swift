@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Controller to house tand root tab controllers
 final class RMTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -16,14 +17,14 @@ final class RMTabBarViewController: UITabBarController {
     }
     
     private func setUpTabs() {
-        let charactersVC = RMCaracterViewController()
+        let charactersVC = RMCharacterViewController()
         let locationsVC = RMLocationViewController()
         let episodesVC = RMEpisodeViewController()
         let settingsVC = RMSettingsViewController()
         
         charactersVC.title = "Characters"
         locationsVC.title = "Locations"
-        episodesVC.title = "Episods"
+        episodesVC.title = "Episodes"
         settingsVC.title = "Settings"
         
         charactersVC.navigationItem.largeTitleDisplayMode = .automatic

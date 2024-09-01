@@ -1,5 +1,5 @@
 //
-//  RMCaracter.swift
+//  RMCharacter.swift
 //  RickAndMorty
 //
 //  Created by Tal Spektor on 31/08/2024.

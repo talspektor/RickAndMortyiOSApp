@@ -75,7 +75,7 @@ class RMCharacterCollectionViewCell: UICollectionViewCell {
             imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3)
         ])
     }
-    
+        
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         setUpLayer()

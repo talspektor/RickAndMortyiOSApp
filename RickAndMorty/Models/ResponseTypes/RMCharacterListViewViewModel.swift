@@ -22,7 +22,6 @@ final class RMCharacterListViewViewModel: NSObject {
     
     private var characters: [RMCharacter] = [] {
         didSet {
-            print("Creating ViewModels")
             for character in characters {
                 let viewModel = RMCharacterCollectionViewCellViewModel(
                     characterName: character.name,
@@ -66,10 +65,8 @@ final class RMCharacterListViewViewModel: NSObject {
             return
         }
         isLoadingMoreCharacters = true
-        print("Fetching more characters")
         guard let request = RMRequest(url: url) else {
             isLoadingMoreCharacters = false
-            print("Failed to create request")
             return
         }
         

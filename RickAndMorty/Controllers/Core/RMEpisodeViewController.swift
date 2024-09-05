@@ -27,9 +27,11 @@ final class RMEpisodeViewController: UIViewController, RMEpisodeListViewDelegate
     
     @objc
     private func didTapSearch() {
-        
+        let vc = RMSearchViewController(config: .init(type: .episod))
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     private func seUpView() {
         episodeListView.delegate = self
         view.addSubview(episodeListView)
@@ -40,6 +42,8 @@ final class RMEpisodeViewController: UIViewController, RMEpisodeListViewDelegate
             episodeListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    
     
     // MARK: - RMEpisodeListViewDelegate
     

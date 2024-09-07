@@ -52,6 +52,7 @@
 		43C7F3062C8A12BF00B53B8B /* RMNoSearchResultViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7F3052C8A12BF00B53B8B /* RMNoSearchResultViewViewModel.swift */; };
 		43C7F3082C8A171B00B53B8B /* RMSearchInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7F3072C8A171B00B53B8B /* RMSearchInputView.swift */; };
 		43C7F30A2C8A175300B53B8B /* RMSearchInputViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7F3092C8A175300B53B8B /* RMSearchInputViewViewModel.swift */; };
+		43C7F30C2C8C8EED00B53B8B /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7F30B2C8C8EED00B53B8B /* RMSearchOptionPickerViewController.swift */; };
 		E2FD44F82C835EBC00DFB592 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD44F72C835EBC00DFB592 /* AppDelegate.swift */; };
 		E2FD44FA2C835EBC00DFB592 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD44F92C835EBC00DFB592 /* SceneDelegate.swift */; };
 		E2FD44FC2C835EBC00DFB592 /* RMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD44FB2C835EBC00DFB592 /* RMTabBarViewController.swift */; };
@@ -119,6 +120,7 @@
 		43C7F3052C8A12BF00B53B8B /* RMNoSearchResultViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMNoSearchResultViewViewModel.swift; sourceTree = "<group>"; };
 		43C7F3072C8A171B00B53B8B /* RMSearchInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchInputView.swift; sourceTree = "<group>"; };
 		43C7F3092C8A175300B53B8B /* RMSearchInputViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchInputViewViewModel.swift; sourceTree = "<group>"; };
+		43C7F30B2C8C8EED00B53B8B /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		E2FD44F42C835EBC00DFB592 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FD44F72C835EBC00DFB592 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2FD44F92C835EBC00DFB592 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,10 +182,10 @@
 		43AEA2F42C85CB42005AB65F /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				43C7F30D2C8C8FA300B53B8B /* Search */,
 				43C7F2F52C89DE2A00B53B8B /* RMLocationDetailViewController.swift */,
 				43AEA2F52C85CB60005AB65F /* RMCharacterDetailViewController.swift */,
 				43B1C3DA2C87363300FEEC0D /* RMEpisodeDetailViewController.swift */,
-				43B1C3E92C87577400FEEC0D /* RMSearchViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -306,6 +308,15 @@
 				43C7F3002C89E8CB00B53B8B /* RMSearchViewViewModel.swift */,
 				43C7F3052C8A12BF00B53B8B /* RMNoSearchResultViewViewModel.swift */,
 				43C7F3092C8A175300B53B8B /* RMSearchInputViewViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		43C7F30D2C8C8FA300B53B8B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				43B1C3E92C87577400FEEC0D /* RMSearchViewController.swift */,
+				43C7F30B2C8C8EED00B53B8B /* RMSearchOptionPickerViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -549,6 +560,7 @@
 				E2FD45272C84353100DFB592 /* RMEndpoint.swift in Sources */,
 				43C7F2F62C89DE2A00B53B8B /* RMLocationDetailViewController.swift in Sources */,
 				E2FD452D2C843C7500DFB592 /* RMCharacterStatus.swift in Sources */,
+				43C7F30C2C8C8EED00B53B8B /* RMSearchOptionPickerViewController.swift in Sources */,
 				43B1C3E12C873D9200FEEC0D /* RMEpisodeDetailView.swift in Sources */,
 				43B1C3DB2C87363300FEEC0D /* RMEpisodeDetailViewController.swift in Sources */,
 				43B1C3DF2C873D4C00FEEC0D /* RMEpisodeDetailViewViewModel.swift in Sources */,

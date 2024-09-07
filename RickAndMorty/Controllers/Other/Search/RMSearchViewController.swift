@@ -19,7 +19,7 @@ final class RMSearchViewController: UIViewController {
     struct Config {
         enum `Type` {
             case character // name | status | gender
-            case episod // name
+            case episode // name
             case location // name | type
             
             var title: String {
@@ -28,7 +28,7 @@ final class RMSearchViewController: UIViewController {
                     return "Search Chatracters"
                 case .location:
                     return "Search Locations"
-                case .episod:
+                case .episode:
                     return "Search Episodes"
                 }
             }
@@ -66,11 +66,17 @@ final class RMSearchViewController: UIViewController {
             target: self,
             action: #selector(didTapExecuteSearch)
         )
+        searchView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchView.presentKeyboard()
     }
     
     @objc
     private func didTapExecuteSearch() {
-//        viewModel.executeSearch()
+        viewModel.executeSearch()
     }
     
     private func addConstraints() {
@@ -83,4 +89,19 @@ final class RMSearchViewController: UIViewController {
         ])
     }
 
+}
+
+// MARK: - RMSearchViewDelegate
+
+extension RMSearchViewController: RMSearchViewDelegate {
+    func rmSearchVeiw(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption) {
+        let vc = RMSearchOptionPickerViewController(option: option) { [weak self] selection in
+            self?.viewModel.set(value: selection, for: option)
+        }
+        vc.sheetPresentationController?.detents = [.medium()]
+        vc.sheetPresentationController?.prefersGrabberVisible = true
+        present(vc, animated: true)
+    }
+    
+    
 }

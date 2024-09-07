@@ -10,8 +10,12 @@ import UIKit
 protocol RMSearchInputViewDelegate: AnyObject {
     func rmSeaarchInputView(_ inputView: RMSearchInputView,
                             didSealectOption option: RMSearchInputViewViewModel.DynamicOption)
+    func rmSeaarchInputView(_ inputView: RMSearchInputView,
+                            didChangeSearchText text: String)
+    func rmSeaarchInputViewDidTapSearchKeboardButton(_ inputView: RMSearchInputView)
 }
 
+/// View for top part of search screen with search bar
 final class RMSearchInputView: UIView {
     
     weak var delegate: RMSearchInputViewDelegate?
@@ -42,6 +46,8 @@ final class RMSearchInputView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(searchBar)
         addConstraints()
+        
+        searchBar.delegate = self
     }
     
     
@@ -158,5 +164,20 @@ final class RMSearchInputView: UIView {
             ),
             for: .normal
         )
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension RMSearchInputView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Notify delegate of change text
+        delegate?.rmSeaarchInputView(self, didChangeSearchText: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // notify search button was tapped
+        searchBar.resignFirstResponder()
+        delegate?.rmSeaarchInputViewDidTapSearchKeboardButton(self)
     }
 }

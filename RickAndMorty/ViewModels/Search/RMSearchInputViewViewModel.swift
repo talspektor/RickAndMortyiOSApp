@@ -28,7 +28,7 @@ final class RMSearchInputViewViewModel {
             switch self {
                 
             case .status:
-                return ["alive", "daed", "unknown"]
+                return ["alive", "dead", "unknown"]
             case .gender:
                 return ["male", "female", "genderless", "unknown"]
             case .locationType:

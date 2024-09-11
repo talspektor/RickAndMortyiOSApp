@@ -74,6 +74,7 @@
 		E2FD452B2C843AAE00DFB592 /* RMSingleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD452A2C843AAE00DFB592 /* RMSingleLocation.swift */; };
 		E2FD452D2C843C7500DFB592 /* RMCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD452C2C843C7500DFB592 /* RMCharacterStatus.swift */; };
 		E2FD452F2C843CAA00DFB592 /* RMCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FD452E2C843CAA00DFB592 /* RMCharacterGender.swift */; };
+		F8628BCD2C9111BE0089FA13 /* RMTableLoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8628BCC2C9111BE0089FA13 /* RMTableLoadingFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,8 @@
 		E2FD452A2C843AAE00DFB592 /* RMSingleLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSingleLocation.swift; sourceTree = "<group>"; };
 		E2FD452C2C843C7500DFB592 /* RMCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterStatus.swift; sourceTree = "<group>"; };
 		E2FD452E2C843CAA00DFB592 /* RMCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterGender.swift; sourceTree = "<group>"; };
+		F8628BCC2C9111BE0089FA13 /* RMTableLoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMTableLoadingFooterView.swift; sourceTree = "<group>"; };
+		F8628BCF2C91187D0089FA13 /* RickAndMorty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RickAndMorty-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +275,10 @@
 		43B1C3FB2C88D7EE00FEEC0D /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				F8628BCF2C91187D0089FA13 /* RickAndMorty-Bridging-Header.h */,
 				43B1C3FC2C88D80600FEEC0D /* RMLocationView.swift */,
 				43B1C4022C88ED7D00FEEC0D /* RMLocationTableViewCell.swift */,
+				F8628BCC2C9111BE0089FA13 /* RMTableLoadingFooterView.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				TargetAttributes = {
 					E2FD44F32C835EBC00DFB592 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -536,6 +542,7 @@
 				43B1C3F72C88945100FEEC0D /* RMSettingsOptions.swift in Sources */,
 				43C7F2F92C89DFC600B53B8B /* MRLocationDetailView.swift in Sources */,
 				43AEA2F62C85CB60005AB65F /* RMCharacterDetailViewController.swift in Sources */,
+				F8628BCD2C9111BE0089FA13 /* RMTableLoadingFooterView.swift in Sources */,
 				43AEA2FC2C85D152005AB65F /* RMFooterLoadingCollectionReusableView.swift in Sources */,
 				43B1C3E42C873F5500FEEC0D /* RMEpisodeListView.swift in Sources */,
 				43B1C3F32C8893B200FEEC0D /* RMSettingsViewModel.swift in Sources */,
@@ -726,6 +733,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3C8BZ4H8Y;
@@ -745,6 +753,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.talspektor.RickAndMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RickAndMorty/Views/Location/RickAndMorty-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -755,6 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3C8BZ4H8Y;
@@ -774,6 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.talspektor.RickAndMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RickAndMorty/Views/Location/RickAndMorty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

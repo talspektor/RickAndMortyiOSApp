@@ -11,6 +11,8 @@ protocol RMSearchViewDelegate: AnyObject {
     func rmSearchVeiw(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption)
     
     func rmSearchVeiw(_ searchView: RMSearchView, didSelectLocation location: RMLocation)
+    func rmSearchVeiw(_ searchView: RMSearchView, didSelectEpisode episode: RMEpisode)
+    func rmSearchVeiw(_ searchView: RMSearchView, didSelectCharacter character: RMCharacter)
 }
 
 final class RMSearchView: UIView {
@@ -57,9 +59,9 @@ final class RMSearchView: UIView {
             self?.searchInputView.update(option: tuple.0, value: tuple.1)
         }
         
-        viewModel.regusterSearchResultHandler { [weak self] results in
+        viewModel.regusterSearchResultHandler { [weak self] result in
             DispatchQueue.main.async {
-                self?.resultsView.configure(with: results)
+                self?.resultsView.configure(with: result)
                 self?.noResultsView.isHidden = true
                 self?.resultsView.isHidden = false
             }
@@ -140,9 +142,21 @@ extension RMSearchView: RMSearchResultsViewDelegate {
         guard let locationModel = viewModel.locationSearchResult(at: index) else {
             return
         }
-        print("Location tapped: \(locationModel.name)")
         delegate?.rmSearchVeiw(self, didSelectLocation: locationModel)
     }
     
+    func rmSearchResultsView(_ resultsView: RMSearchResultsView, didTapCharacterAt index: Int) {
+        guard let characterModel = viewModel.characterSearchResult(at: index) else {
+            return
+        }
+        delegate?.rmSearchVeiw(self, didSelectCharacter: characterModel)
+    }
+    
+    func rmSearchResultsView(_ resultsView: RMSearchResultsView, didTapEpisodeAt index: Int) {
+        guard let episodeModel = viewModel.episodeSearchResult(at: index) else {
+            return
+        }
+        delegate?.rmSearchVeiw(self, didSelectEpisode: episodeModel)
+    }
     
 }
